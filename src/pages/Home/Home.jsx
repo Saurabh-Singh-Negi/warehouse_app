@@ -5,8 +5,11 @@ import Card from "../../components/WarehouseCard/Card";
 import { useDispatch, useSelector } from "react-redux";
 import { setWarehouseData } from "../../store/slices/warehouseSlice";
 import "./Home.css";
+import SearchWarehouse from "../../components/SearchBar/SearchWarehouse";
+import FilterWarehouse from "../../components/Filter/FilterWarehouse";
 
 const Home = () => {
+  const [warehouseDataDup, setWarehouseDataDup] = useState([]);
   const dispatch = useDispatch();
   const warehouseData = useSelector((state) => state.warehouse);
 
@@ -15,19 +18,31 @@ const Home = () => {
       .get("https://warehouse-api-dadw.onrender.com/details")
       .then((response) => {
         dispatch(setWarehouseData(response.data));
+        setWarehouseDataDup(response.data);
       })
       .catch((err) => {
         console.log(err);
       });
   }, [dispatch]);
-  console.log("Warehouse Data in Home:", warehouseData);
   return (
-    <div className="home-container">
-      {warehouseData &&
-        warehouseData.map((element, index) => (
-          <Card key={index} warehouseData={element} />
-        ))}
-    </div>
+    <>
+      <div className="home-search-container">
+        <SearchWarehouse
+          warehouseData={warehouseData}
+          setWarehouseDataDup={setWarehouseDataDup}
+        />
+        <FilterWarehouse
+          warehouseData={warehouseData}
+          setWarehouseDataDup={setWarehouseDataDup}
+        />
+      </div>
+      <div className="home-container">
+        {warehouseDataDup &&
+          warehouseDataDup.map((element, index) => (
+            <Card key={index} warehouseData={element} />
+          ))}
+      </div>
+    </>
   );
 };
 
