@@ -1,4 +1,5 @@
 # warehouse_app
+# Live at https://warehouse-app.netlify.app/
 # Steps to start
 1. npm install
 2. npm run dev
