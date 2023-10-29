@@ -2,3 +2,7 @@ body {
   background-color: whitesmoke;
   font-family: "Segoe UI", sans-serif;
 }
+
+button {
+  cursor: pointer;
+}

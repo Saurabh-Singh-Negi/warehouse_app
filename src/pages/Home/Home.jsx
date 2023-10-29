@@ -25,7 +25,7 @@ const Home = () => {
       });
   }, [dispatch]);
   return (
-    <>
+    <div className="parent-home-container">
       <div className="home-search-container">
         <SearchWarehouse
           warehouseData={warehouseData}
@@ -42,7 +42,7 @@ const Home = () => {
             <Card key={index} warehouseData={element} />
           ))}
       </div>
-    </>
+    </div>
   );
 };
 

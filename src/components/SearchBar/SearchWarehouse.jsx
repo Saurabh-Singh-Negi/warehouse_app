@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import "./SearchWarehouse.css";
 const SearchWarehouse = ({ warehouseData, setWarehouseDataDup }) => {
   const [searchText, setSeachText] = useState("");
 
@@ -9,13 +9,16 @@ const SearchWarehouse = ({ warehouseData, setWarehouseDataDup }) => {
   };
 
   return (
-    <div>
+    <div className="search-container">
       <input
+        className="search-input"
         type="text"
         placeholder="search warehouse"
         onChange={(e) => setSeachText(e.target.value)}
       />
-      <button onClick={handleSearch}>Search</button>
+      <button className="search-btn" onClick={handleSearch}>
+        Search
+      </button>
     </div>
   );
 };

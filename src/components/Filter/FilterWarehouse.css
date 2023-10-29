@@ -2,3 +2,9 @@
   display: flex;
   gap: 1rem;
 }
+
+select {
+  cursor: pointer;
+  height: 2rem;
+  padding: 0.2rem;
+}

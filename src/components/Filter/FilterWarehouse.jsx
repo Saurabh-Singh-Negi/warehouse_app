@@ -30,6 +30,7 @@ const FilterWarehouse = ({ warehouseData, setWarehouseDataDup }) => {
         <select
           onChange={(e) => setSelectedCity(e.target.value)}
           value={selectedCity}
+          className="city-select"
         >
           <option value="">Select City</option>
           {warehouseData.map((ele, index) => (

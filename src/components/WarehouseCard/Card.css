@@ -5,7 +5,12 @@
   flex-direction: column;
   border-radius: 0.5rem;
   background-color: rgba(14, 13, 13, 0.677);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   cursor: pointer;
+}
+
+.card-container:hover {
+  transform: scale(1.02);
 }
 
 .card-heading-container {
