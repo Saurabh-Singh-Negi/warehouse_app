@@ -7,11 +7,13 @@ import { setWarehouseData } from "../../store/slices/warehouseSlice";
 import "./Home.css";
 import SearchWarehouse from "../../components/SearchBar/SearchWarehouse";
 import FilterWarehouse from "../../components/Filter/FilterWarehouse";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const [warehouseDataDup, setWarehouseDataDup] = useState([]);
   const dispatch = useDispatch();
   const warehouseData = useSelector((state) => state.warehouse);
+  const navigate = useNavigate();
 
   useEffect(() => {
     axios
@@ -24,6 +26,10 @@ const Home = () => {
         console.log(err);
       });
   }, [dispatch]);
+
+  const handleClick = (id) => {
+    navigate(`/warehouseinfo/${id}`);
+  };
   return (
     <div className="parent-home-container">
       <div className="home-search-container">
@@ -38,8 +44,10 @@ const Home = () => {
       </div>
       <div className="home-container">
         {warehouseDataDup &&
-          warehouseDataDup.map((element, index) => (
-            <Card key={index} warehouseData={element} />
+          warehouseDataDup.map((element) => (
+            <div key={element.id} onClick={() => handleClick(element.id)}>
+              <Card warehouseData={element} />
+            </div>
           ))}
       </div>
     </div>

@@ -1,0 +1,18 @@
+.info-container {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.edit-btn-container {
+  margin: 1rem;
+}
+
+.edit-btn-heading {
+  width: 7rem;
+  height: 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+}

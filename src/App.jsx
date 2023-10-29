@@ -1,8 +1,9 @@
 import Home from "./pages/Home/Home";
 import { Provider } from "react-redux";
 import store from "./store/store";
-import Detail from "./components/Detail/Detail";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import WarehouseInfo from "./pages/WarehouseInfo/WarehouseInfo";
+
 function App() {
   return (
     <>
@@ -10,7 +11,10 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Home />}></Route>
-            <Route path="/detail" element={<Detail />}></Route>
+            <Route
+              path="/warehouseinfo/:id"
+              element={<WarehouseInfo />}
+            ></Route>
           </Routes>
         </BrowserRouter>
       </Provider>
