@@ -17,7 +17,7 @@ const Home = () => {
 
   useEffect(() => {
     axios
-      .get("https://warehouse-api-dadw.onrender.com/details")
+      .get("https://api.npoint.io/a29c69be1faec5ded6c9")
       .then((response) => {
         dispatch(setWarehouseData(response.data));
         setWarehouseDataDup(response.data);
