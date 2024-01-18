@@ -1,4 +1,5 @@
-# warehouse_app
+# warehouse_app 
+## This app was built as an assignment and allows users to see the available warehouses, filter them based on various conditions
 # Live at https://warehouse-app.netlify.app/
 # Steps to start
 1. npm install
